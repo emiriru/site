@@ -4,23 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- ▼ここを差し替え: タイトル・説明文 -->
-    <title>田中 美咲 | Webライター Portfolio</title>
-    <meta name="description" content="金融・薬機法に強いSEO特化型Webライター、田中美咲のポートフォリオサイトです。実績・対応業務・料金の目安を掲載しています。">
+    <title>Shohei | コトバを実装するAIエンジニア</title>
+    <meta name="description"
+        content="Webアプリ開発エンジニアとして働きながら、副業でWebライターに挑戦するShoheiのポートフォリオサイトです。副業ライティング挑戦の記録や執筆実績を掲載しています。">
 
-    <!-- ▼ここを差し替え: OGP(SNSシェア時のリンクカード表示) -->
+    <!-- OGP(SNSシェア時のリンクカード表示)。og:url/og:imageはGitHub Pagesの標準URL規則(https://<ユーザー名>.github.io/<リポジトリ名>/)に基づく想定値。▼独自ドメインを設定した場合はここを差し替え -->
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ja_JP">
-    <meta property="og:site_name" content="田中 美咲 | Webライター Portfolio">
-    <meta property="og:title" content="田中 美咲 | Webライター Portfolio">
-    <meta property="og:description" content="金融・薬機法に強いSEO特化型Webライター、田中美咲のポートフォリオサイトです。実績・対応業務・料金の目安を掲載しています。">
-    <meta property="og:url" content="https://example.com/">
-    <meta property="og:image" content="https://picsum.photos/seed/portfolio-ogp/1200/630">
+    <meta property="og:site_name" content="Shohei | コトバを実装するAIエンジニア">
+    <meta property="og:title" content="Shohei | コトバを実装するAIエンジニア">
+    <meta property="og:description"
+        content="Webアプリ開発エンジニアとして働きながら、副業でWebライターに挑戦するShoheiのポートフォリオサイトです。副業ライティング挑戦の記録や執筆実績を掲載しています。">
+    <meta property="og:url" content="https://emiriru.github.io/site/">
+    <meta property="og:image" content="https://emiriru.github.io/site/images/hero.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="田中 美咲 | Webライター Portfolio">
-    <meta name="twitter:description" content="金融・薬機法に強いSEO特化型Webライター、田中美咲のポートフォリオサイトです。実績・対応業務・料金の目安を掲載しています。">
-    <meta name="twitter:image" content="https://picsum.photos/seed/portfolio-ogp/1200/630">
+    <meta name="twitter:title" content="Shohei | コトバを実装するAIエンジニア">
+    <meta name="twitter:description"
+        content="Webアプリ開発エンジニアとして働きながら、副業でWebライターに挑戦するShoheiのポートフォリオサイトです。副業ライティング挑戦の記録や執筆実績を掲載しています。">
+    <meta name="twitter:image" content="https://emiriru.github.io/site/images/hero.jpg">
 
     <!-- Tailwind CSS (Play CDN / ビルド不要) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -31,6 +33,17 @@
                     fontFamily: {
                         sans: ['"Noto Sans JP"', 'sans-serif'],
                     },
+                    colors: {
+                        paper: '#FFFFFF',
+                        'paper-deep': '#F9FAFB',
+                        ink: '#3B3428',
+                        clay: '#5C5346',
+                        taupe: '#6E6350',
+                        sand: '#E4D9C4',
+                        navy: '#2C3E63',
+                        'navy-deep': '#232A3D',
+                        'navy-light': '#E8ECF4',
+                    },
                 },
             },
         };
@@ -40,39 +53,52 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
         rel="stylesheet">
+
+    <style>
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
 </head>
 
-<body class="bg-white text-slate-700 font-sans antialiased">
+<body class="bg-paper text-clay font-sans antialiased">
 
     <!-- ============ Header ============ -->
-    <header id="site-header" class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100 transition-shadow">
+    <header id="site-header" class="sticky top-0 z-50 bg-paper/90 backdrop-blur border-b border-sand transition-shadow">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <!-- ▼ここを差し替え: ロゴ・お名前 -->
-                <a href="#top" class="text-lg font-bold tracking-tight text-slate-900">
-                    Minami Tanaka<span class="text-indigo-600">.</span>
+                <a href="#top" class="text-lg font-bold tracking-tight text-ink">
+                    Shohei<span class="text-navy">.</span>コトバを実装するAIエンジニア
                 </a>
 
-                <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-                    <a href="#about" class="hover:text-indigo-600 transition-colors">About</a>
-                    <a href="#services" class="hover:text-indigo-600 transition-colors">Services</a>
-                    <a href="#works" class="hover:text-indigo-600 transition-colors">Works</a>
-                    <a href="#pricing" class="hover:text-indigo-600 transition-colors">Pricing</a>
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-clay">
+                    <a href="#about" class="hover:text-navy transition-colors">About</a>
+                    <a href="#services" class="hover:text-navy transition-colors">Services</a>
+                    <a href="#works" class="hover:text-navy transition-colors">Works</a>
+                    <a href="#pricing" class="hover:text-navy transition-colors">Pricing</a>
                     <a href="#contact"
-                        class="ml-2 inline-flex items-center rounded-full bg-indigo-600 px-5 py-2 text-white font-semibold hover:bg-indigo-700 transition-colors">
+                        class="ml-2 inline-flex items-center rounded-lg bg-navy px-5 py-2 text-white font-semibold hover:bg-navy-deep transition-colors">
                         お問い合わせ
                     </a>
                 </nav>
 
                 <button id="menu-btn" type="button" aria-label="メニューを開く" aria-expanded="false"
-                    class="md:hidden p-2 text-slate-700">
-                    <svg id="icon-open" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    class="md:hidden p-2 text-clay">
+                    <svg id="icon-open" class="w-6 h-6" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2">
                         <line x1="4" y1="6" x2="20" y2="6" stroke-linecap="round" />
                         <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round" />
                         <line x1="4" y1="18" x2="20" y2="18" stroke-linecap="round" />
                     </svg>
-                    <svg id="icon-close" class="hidden w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    <svg id="icon-close" class="hidden w-6 h-6" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2">
                         <line x1="6" y1="6" x2="18" y2="18" stroke-linecap="round" />
                         <line x1="18" y1="6" x2="6" y2="18" stroke-linecap="round" />
@@ -81,107 +107,107 @@
             </div>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-100 bg-white">
-            <div class="px-4 py-4 flex flex-col gap-4 text-sm font-medium text-slate-600">
-                <a href="#about" class="hover:text-indigo-600 transition-colors">About</a>
-                <a href="#services" class="hover:text-indigo-600 transition-colors">Services</a>
-                <a href="#works" class="hover:text-indigo-600 transition-colors">Works</a>
-                <a href="#pricing" class="hover:text-indigo-600 transition-colors">Pricing</a>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-sand bg-paper">
+            <div class="px-4 py-4 flex flex-col gap-4 text-sm font-medium text-clay">
+                <a href="#about" class="hover:text-navy transition-colors">About</a>
+                <a href="#services" class="hover:text-navy transition-colors">Services</a>
+                <a href="#works" class="hover:text-navy transition-colors">Works</a>
+                <a href="#pricing" class="hover:text-navy transition-colors">Pricing</a>
                 <a href="#contact"
-                    class="inline-flex justify-center rounded-full bg-indigo-600 px-5 py-2.5 text-white font-semibold hover:bg-indigo-700 transition-colors">
+                    class="inline-flex justify-center rounded-lg bg-navy px-5 py-2.5 text-white font-semibold hover:bg-navy-deep transition-colors">
                     お問い合わせ
                 </a>
             </div>
         </div>
     </header>
 
+    <main>
+
     <!-- ============ Hero (MV) ============ -->
-    <section id="top" class="scroll-mt-20 relative overflow-hidden bg-gradient-to-b from-indigo-50/70 to-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <p class="text-sm font-semibold text-indigo-600 tracking-widest">WEB WRITER PORTFOLIO</p>
-                <!-- ▼ここを差し替え: キャッチコピー -->
-                <h1 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-tight">
-                    金融・薬機法に強い、<br class="hidden sm:block">
-                    結果を出すための<br class="hidden sm:block">
-                    SEO特化型Webライター
-                </h1>
-                <p class="mt-6 text-base sm:text-lg text-slate-600 leading-relaxed">
-                    元化粧品販売員の実務経験と日本化粧品検定1級の知識を活かし、読者の行動を後押しする記事を書いています。構成から執筆、WordPress入稿まで一貫して対応します。
-                </p>
-                <div class="mt-8 flex flex-wrap gap-4">
-                    <a href="#works"
-                        class="inline-flex items-center justify-center rounded-full bg-indigo-600 px-8 py-3 text-white font-semibold shadow-sm hover:bg-indigo-700 transition-colors">
-                        実績を見る
-                    </a>
-                    <a href="#contact"
-                        class="inline-flex items-center justify-center rounded-full border border-slate-300 px-8 py-3 text-slate-700 font-semibold hover:bg-slate-50 transition-colors">
-                        お問い合わせ
-                    </a>
+    <!--
+        スプリット・スクリーン構成(portfolio-spec.md 2.3参照)。
+        テキストとイラストを完全に左右(モバイルは上下)分割し、画像の上に文字を重ねないため、
+        イラストの明暗にかかわらずコントラスト比を気にする必要がない。
+    -->
+    <section id="top" class="scroll-mt-20 bg-paper">
+        <div class="grid md:grid-cols-2 md:min-h-[560px]">
+            <!-- テキストパネル -->
+            <div class="order-2 md:order-1 flex items-center bg-gradient-to-b from-navy-light/70 to-paper">
+                <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-0 md:pr-8 lg:pr-12">
+                    <div class="md:ml-auto md:max-w-md lg:max-w-lg">
+                        <p class="text-base font-semibold text-navy tracking-widest">CODE × WORDS / PORTFOLIO</p>
+                        <h1 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-black text-ink leading-tight">
+                            コードも書くし、<br class="hidden sm:block">
+                            文章も書く。
+                        </h1>
+                        <p class="mt-6 text-base sm:text-lg text-clay leading-relaxed">
+                            技術をわかりやすくほどき、体験を自分の言葉で届ける。Webアプリ開発の知見を生かした執筆と、仕事・育児のリアルな気づきをエッセイとして発信しています。
+                        </p>
+                        <div class="mt-8 flex flex-wrap gap-4">
+                            <a href="#works"
+                                class="inline-flex items-center justify-center rounded-lg bg-navy px-8 py-3 text-white font-semibold shadow-sm hover:bg-navy-deep transition-colors">
+                                実績を見る
+                            </a>
+                            <a href="#contact"
+                                class="inline-flex items-center justify-center rounded-lg border border-sand px-8 py-3 text-clay font-semibold hover:bg-paper-deep transition-colors">
+                                お問い合わせ
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="relative flex justify-center">
-                <!-- ▼ここを差し替え: プロフィール写真・イラスト -->
-                <div
-                    class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-indigo-100 flex items-center justify-center">
-                    <svg class="w-28 h-28 sm:w-32 sm:h-32 text-indigo-400" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="1.5">
-                        <rect x="5" y="3" width="11" height="15" rx="1.5" />
-                        <line x1="8" y1="7" x2="13" y2="7" stroke-linecap="round" />
-                        <line x1="8" y1="10" x2="13" y2="10" stroke-linecap="round" />
-                        <line x1="8" y1="13" x2="11" y2="13" stroke-linecap="round" />
-                        <path d="M14 15l5-5 2 2-5 5h-2v-2z" stroke-linejoin="round" />
-                    </svg>
-                </div>
-                <p
-                    class="absolute -bottom-2 left-1/2 -translate-x-1/2 whitespace-nowrap bg-white text-xs text-slate-500 px-3 py-1 rounded-full border border-slate-200 shadow-sm">
-                    Profile Photo / Illustration Placeholder
-                </p>
+            <!-- イラストパネル(フルブリード) -->
+            <div class="order-1 md:order-2 relative aspect-[4/3] md:aspect-auto overflow-hidden">
+                <picture>
+                    <source srcset="images/hero.webp" type="image/webp">
+                    <img src="images/hero.jpg" alt="星空の下、ノートに一緒に書き込む少年とロボット" class="absolute inset-0 w-full h-full object-cover">
+                </picture>
             </div>
         </div>
     </section>
 
     <!-- ============ About ============ -->
-    <section id="about" class="scroll-mt-20 py-20 sm:py-28 bg-white">
+    <section id="about" class="scroll-mt-20 py-20 sm:py-28 bg-paper">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto">
-                <h2 class="text-sm font-semibold text-indigo-600 tracking-widest">ABOUT</h2>
-                <p class="mt-2 text-2xl sm:text-3xl font-bold text-slate-900">自己紹介</p>
+                <h2 class="text-base font-semibold text-navy tracking-widest">ABOUT</h2>
+                <p class="mt-2 text-2xl sm:text-3xl font-bold text-ink">自己紹介</p>
             </div>
 
             <div class="mt-14 grid md:grid-cols-3 gap-10 items-start">
                 <div class="md:col-span-1 flex flex-col items-center text-center">
-                    <!-- ▼ここを差し替え: 顔写真 -->
                     <div
-                        class="w-40 h-40 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center overflow-hidden">
-                        <svg class="w-20 h-20 text-slate-400" viewBox="0 0 24 24" fill="currentColor">
-                            <circle cx="12" cy="8" r="4" />
-                            <path d="M12 14c-5 0-9 2.7-9 6v2h18v-2c0-3.3-4-6-9-6z" />
-                        </svg>
+                        class="w-40 h-40 rounded-full bg-paper-deep border border-sand flex items-center justify-center overflow-hidden">
+                        <picture>
+                            <source srcset="images/profile.webp" type="image/webp">
+                            <img src="images/profile.jpg" alt="Shohei" class="w-full h-full object-cover">
+                        </picture>
                     </div>
-                    <!-- ▼ここを差し替え: お名前・居住地 -->
-                    <p class="mt-4 text-lg font-bold text-slate-900">田中 美咲</p>
-                    <p class="text-sm text-slate-500">Webライター / 東京都在住</p>
+                    <p class="mt-4 text-lg font-bold text-ink">Shohei</p>
+                    <p class="text-sm text-taupe">Webアプリ開発エンジニア / Webライター・福岡県在住</p>
 
                     <div class="mt-4 flex flex-wrap justify-center gap-2">
                         <span
-                            class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-600">日本化粧品検定1級</span>
+                            class="inline-flex items-center rounded-md border border-sand bg-paper-deep px-3 py-1 text-xs font-medium text-clay">AWSクラウドプラクティショナー</span>
                         <span
-                            class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-600">元化粧品販売員(5年)</span>
+                            class="inline-flex items-center rounded-md border border-sand bg-paper-deep px-3 py-1 text-xs font-medium text-clay">基本情報技術者試験</span>
+                        <span
+                            class="inline-flex items-center rounded-md border border-sand bg-paper-deep px-3 py-1 text-xs font-medium text-clay">Javaブロンズ</span>
+                        <span
+                            class="inline-flex items-center rounded-md border border-sand bg-paper-deep px-3 py-1 text-xs font-medium text-clay">ネイル検定3級</span>
                     </div>
                 </div>
 
-                <!-- ▼ここを差し替え: 自己紹介文 -->
-                <div class="md:col-span-2 text-slate-600 leading-loose space-y-4">
+                <div class="md:col-span-2 text-clay leading-loose space-y-4">
                     <p>
-                        はじめまして、Webライターの田中美咲です。化粧品販売員として5年間、店頭で数千人のお客様の肌悩みやご相談に向き合ってきました。
+                        はじめまして、Shoheiです。普段はJavaを中心としたWebアプリケーション開発を手がけるエンジニアとして、フルリモートで働いています。未就学児2人の育児と両立しながら、副業でWebライターに挑戦しています。
                     </p>
                     <p>
-                        「専門用語をかみ砕いて伝える」「お客様の悩みに寄り添う」接客の中で培った視点を活かし、現在はWebライターとして企業様のオウンドメディアやコラム記事の執筆を行っています。
+                        技術をわかりやすい言葉にほどくことと、日々の気づきを自分の言葉で届けることを大切にしています。AIは便利な道具。何を書くか、どう伝えるかを決めるのは自分自身、という姿勢で書いています。
                     </p>
                     <p>
-                        日本化粧品検定1級を保有しており、薬機法を意識した表現のチェックにも対応可能です。読者にとって「読みやすく」「行動につながる」記事を書くことを大切にしています。
+                        以前は美容業界にいたこともあり、ネイル検定3級も保有しています。うまくいかなかったことも含めて、実際に体験したことをそのまま記事にすることを心がけています。
                     </p>
                 </div>
             </div>
@@ -189,357 +215,367 @@
     </section>
 
     <!-- ============ Services & Tools ============ -->
-    <section id="services" class="scroll-mt-20 py-20 sm:py-28 bg-slate-50">
+    <section id="services" class="scroll-mt-20 py-20 sm:py-28 bg-paper-deep">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto">
-                <h2 class="text-sm font-semibold text-indigo-600 tracking-widest">SERVICES</h2>
-                <p class="mt-2 text-2xl sm:text-3xl font-bold text-slate-900">対応可能業務</p>
+                <h2 class="text-base font-semibold text-navy tracking-widest">SERVICES</h2>
+                <p class="mt-2 text-2xl sm:text-3xl font-bold text-ink">対応可能業務</p>
             </div>
 
-            <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- ▼ここを差し替え: 対応可能業務の内容 -->
-                <div class="rounded-2xl border border-slate-200 bg-white p-6">
-                    <div class="w-9 h-9 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600">
-                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <div class="mt-14 grid sm:grid-cols-2 gap-6">
+                <div class="rounded-xl border border-sand bg-paper p-6">
+                    <div class="w-9 h-9 rounded-full bg-navy-light flex items-center justify-center text-navy">
+                        <svg class="w-5 h-5" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="5 13 10 18 19 7" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </div>
-                    <p class="mt-4 font-bold text-slate-900">SEOライティング</p>
-                    <p class="mt-2 text-sm text-slate-600 leading-relaxed">検索意図を分析し、上位表示を狙える記事構成から執筆まで対応します。</p>
+                    <p class="mt-4 font-bold text-ink">Web記事の執筆</p>
+                    <p class="mt-2 text-sm text-clay leading-relaxed">IT・エンジニア領域の専門知識に加え、実際に体験したことをもとにしたリアルな文章を書きます。</p>
                 </div>
 
-                <div class="rounded-2xl border border-slate-200 bg-white p-6">
-                    <div class="w-9 h-9 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600">
-                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <div class="rounded-xl border border-sand bg-paper p-6">
+                    <div class="w-9 h-9 rounded-full bg-navy-light flex items-center justify-center text-navy">
+                        <svg class="w-5 h-5" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="5 13 10 18 19 7" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </div>
-                    <p class="mt-4 font-bold text-slate-900">構成案作成</p>
-                    <p class="mt-2 text-sm text-slate-600 leading-relaxed">キーワード選定・見出し設計など、執筆前の設計のみのご依頼も可能です。</p>
+                    <p class="mt-4 font-bold text-ink">AIツールを活用した執筆・リサーチ</p>
+                    <p class="mt-2 text-sm text-clay leading-relaxed">Claude・ChatGPTなどのAIツールを使った執筆・リサーチ・推敲に対応します。
+                    </p>
                 </div>
 
-                <div class="rounded-2xl border border-slate-200 bg-white p-6">
-                    <div class="w-9 h-9 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600">
-                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <div class="rounded-xl border border-sand bg-paper p-6">
+                    <div class="w-9 h-9 rounded-full bg-navy-light flex items-center justify-center text-navy">
+                        <svg class="w-5 h-5" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="5 13 10 18 19 7" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </div>
-                    <p class="mt-4 font-bold text-slate-900">画像選定・簡単なバナー作成</p>
-                    <p class="mt-2 text-sm text-slate-600 leading-relaxed">Canvaを使ったアイキャッチ画像・SNS用画像の作成に対応します。</p>
+                    <p class="mt-4 font-bold text-ink">業務効率化ツールの開発・AI導入支援</p>
+                    <p class="mt-2 text-sm text-clay leading-relaxed">
+                        本業のエンジニア経験を活かし、業務効率化ツールの開発やAI導入に関するご相談にも対応します。</p>
                 </div>
 
-                <div class="rounded-2xl border border-slate-200 bg-white p-6">
-                    <div class="w-9 h-9 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600">
-                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <div class="rounded-xl border border-sand bg-paper p-6">
+                    <div class="w-9 h-9 rounded-full bg-navy-light flex items-center justify-center text-navy">
+                        <svg class="w-5 h-5" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="5 13 10 18 19 7" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </div>
-                    <p class="mt-4 font-bold text-slate-900">WordPress直接入稿</p>
-                    <p class="mt-2 text-sm text-slate-600 leading-relaxed">装飾・内部リンク設定まで含めた入稿作業を代行します。</p>
-                </div>
-
-                <div class="rounded-2xl border border-slate-200 bg-white p-6">
-                    <div class="w-9 h-9 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600">
-                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="5 13 10 18 19 7" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </div>
-                    <p class="mt-4 font-bold text-slate-900">リライト・校正</p>
-                    <p class="mt-2 text-sm text-slate-600 leading-relaxed">既存記事のSEO改善、薬機法・表現面のチェックに対応します。</p>
-                </div>
-
-                <div class="rounded-2xl border border-slate-200 bg-white p-6">
-                    <div class="w-9 h-9 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600">
-                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="5 13 10 18 19 7" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </div>
-                    <p class="mt-4 font-bold text-slate-900">インタビュー取材</p>
-                    <p class="mt-2 text-sm text-slate-600 leading-relaxed">オンライン取材からの記事化にも対応可能です。</p>
+                    <p class="mt-4 font-bold text-ink">AI画像生成を使ったビジュアル制作</p>
+                    <p class="mt-2 text-sm text-clay leading-relaxed">
+                        プロンプト設計から一貫した世界観づくりまで、AI画像生成を使ったアイキャッチ・ヘッダー画像の制作に対応します。AI画像生成の特性を理解した上で、より自然な質感に近づけるよう試行錯誤・改善を重ねています。</p>
                 </div>
             </div>
 
-            <!-- ▼ここを差し替え: 使用可能ツール -->
             <div class="mt-14">
-                <p class="text-center font-bold text-slate-900">使用可能ツール</p>
+                <p class="text-center font-bold text-ink">主な使用ツール</p>
                 <div class="mt-6 flex flex-wrap justify-center gap-3">
-                    <span
-                        class="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-600">WordPress</span>
-                    <span
-                        class="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-600">Googleドキュメント</span>
-                    <span
-                        class="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-600">Googleスプレッドシート</span>
-                    <span
-                        class="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-600">Slack</span>
-                    <span
-                        class="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-600">Chatwork</span>
-                    <span
-                        class="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-600">Canva</span>
-                    <span
-                        class="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-600">ラッコキーワード</span>
-                    <span
-                        class="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-600">Search
-                        Console(簡易分析)</span>
+                    <span class="rounded-md border border-sand bg-paper px-4 py-2 text-sm text-clay">Claude</span>
+                    <span class="rounded-md border border-sand bg-paper px-4 py-2 text-sm text-clay">ChatGPT</span>
+                    <span class="rounded-md border border-sand bg-paper px-4 py-2 text-sm text-clay">NotebookLM</span>
+                    <span class="rounded-md border border-sand bg-paper px-4 py-2 text-sm text-clay">VS
+                        Code</span>
+                    <span class="rounded-md border border-sand bg-paper px-4 py-2 text-sm text-clay">Git</span>
+                    <span class="rounded-md border border-sand bg-paper px-4 py-2 text-sm text-clay">SourceTree</span>
+                    <span class="rounded-md border border-sand bg-paper px-4 py-2 text-sm text-clay">Googleドキュメント</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ============ Works ============ -->
-    <section id="works" class="scroll-mt-20 py-20 sm:py-28 bg-white">
+    <section id="works" class="scroll-mt-20 py-20 sm:py-28 bg-paper">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto">
-                <h2 class="text-sm font-semibold text-indigo-600 tracking-widest">WORKS</h2>
-                <p class="mt-2 text-2xl sm:text-3xl font-bold text-slate-900">制作・執筆実績</p>
+                <h2 class="text-base font-semibold text-navy tracking-widest">WORKS</h2>
+                <p class="mt-2 text-2xl sm:text-3xl font-bold text-ink">制作・執筆実績</p>
             </div>
 
-            <!-- タブ切り替え(ジャンル別フィルタ) -->
+            <!-- タブ切り替え(マガジン別フィルタ) -->
             <div class="mt-10 flex flex-wrap justify-center gap-3">
                 <button type="button" data-filter="all"
-                    class="rounded-full px-5 py-2 text-sm font-semibold bg-indigo-600 text-white transition-colors">すべて</button>
-                <button type="button" data-filter="beauty"
-                    class="rounded-full px-5 py-2 text-sm font-semibold bg-white text-slate-600 border border-slate-200 hover:border-indigo-300 transition-colors">美容・化粧品</button>
-                <button type="button" data-filter="finance"
-                    class="rounded-full px-5 py-2 text-sm font-semibold bg-white text-slate-600 border border-slate-200 hover:border-indigo-300 transition-colors">金融・マネー</button>
-                <button type="button" data-filter="lifestyle"
-                    class="rounded-full px-5 py-2 text-sm font-semibold bg-white text-slate-600 border border-slate-200 hover:border-indigo-300 transition-colors">ライフスタイル</button>
+                    class="rounded-lg px-5 py-2 text-sm font-semibold bg-navy text-white transition-colors">すべて</button>
+                <button type="button" data-filter="intro"
+                    class="rounded-lg px-5 py-2 text-sm font-semibold bg-paper text-clay border border-sand hover:border-navy transition-colors">自己紹介</button>
+                <button type="button" data-filter="challenge"
+                    class="rounded-lg px-5 py-2 text-sm font-semibold bg-paper text-clay border border-sand hover:border-navy transition-colors">副業ライティング挑戦記</button>
+                <button type="button" data-filter="essay"
+                    class="rounded-lg px-5 py-2 text-sm font-semibold bg-paper text-clay border border-sand hover:border-navy transition-colors">エッセイ</button>
+                <button type="button" data-filter="site"
+                    class="rounded-lg px-5 py-2 text-sm font-semibold bg-paper text-clay border border-sand hover:border-navy transition-colors">サイト制作</button>
             </div>
 
-            <!-- ▼ここを差し替え: 執筆実績(タイトル・担当範囲・成果・記事URL) -->
             <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div data-category="beauty" class="rounded-2xl border border-slate-200 overflow-hidden bg-white">
-                    <img src="https://picsum.photos/seed/writer-beauty1/600/400" alt="" loading="lazy"
-                        class="w-full h-44 object-cover">
+                <article>
+                <a href="https://note.com/emiriru_w/n/n69dfe825d8a9" target="_blank" rel="noreferrer"
+                    data-category="intro"
+                    class="rounded-xl border border-sand overflow-hidden bg-paper block hover:shadow-md transition-shadow">
+                    <picture>
+                        <source srcset="images/works-intro.webp" type="image/webp">
+                        <img src="images/works-intro.jpg" alt="自己紹介とポートフォリオ" loading="lazy"
+                            class="w-full h-44 object-cover">
+                    </picture>
                     <div class="p-5">
                         <div class="flex flex-wrap gap-2">
-                            <span class="rounded-full bg-indigo-50 text-indigo-600 text-xs font-medium px-3 py-1">構成・執筆</span>
+                            <span class="rounded-md bg-navy-light text-navy text-xs font-medium px-3 py-1">自己紹介</span>
                         </div>
-                        <p class="mt-3 font-bold text-slate-900 leading-snug">【薬機法対応】敏感肌向け化粧水おすすめ10選</p>
-                        <p class="mt-2 text-sm text-slate-500">「敏感肌 化粧水」で検索順位1位を獲得</p>
-                        <a href="#" class="mt-4 inline-block text-sm font-semibold text-indigo-600 hover:underline">記事を読む »</a>
+                        <p class="mt-3 font-bold text-ink leading-snug">自己紹介とポートフォリオ</p>
+                        <p class="mt-2 text-sm text-taupe">エンジニアとして得た知識と、実際に書いた記事をもとに、対応できることをまとめた自己紹介ページ。</p>
+                        <span class="mt-4 inline-block text-sm font-semibold text-navy">記事を読む »</span>
                     </div>
-                </div>
+                </a>
+                </article>
 
-                <div data-category="finance" class="rounded-2xl border border-slate-200 overflow-hidden bg-white">
-                    <img src="https://picsum.photos/seed/writer-finance1/600/400" alt="" loading="lazy"
-                        class="w-full h-44 object-cover">
+                <article>
+                <a href="https://note.com/emiriru_w/n/nc3886e7cb7bd" target="_blank" rel="noreferrer"
+                    data-category="challenge"
+                    class="rounded-xl border border-sand overflow-hidden bg-paper block hover:shadow-md transition-shadow">
+                    <picture>
+                        <source srcset="images/works-challenge1.webp" type="image/webp">
+                        <img src="images/works-challenge1.jpg" alt="本業を持ちながら副業ライティングに20件近く挑戦してみた【前編】"
+                            loading="lazy" class="w-full h-44 object-cover">
+                    </picture>
                     <div class="p-5">
                         <div class="flex flex-wrap gap-2">
-                            <span class="rounded-full bg-indigo-50 text-indigo-600 text-xs font-medium px-3 py-1">執筆のみ</span>
+                            <span
+                                class="rounded-md bg-navy-light text-navy text-xs font-medium px-3 py-1">副業ライティング挑戦記</span>
                         </div>
-                        <p class="mt-3 font-bold text-slate-900 leading-snug">初心者向け・NISAの始め方完全ガイド</p>
-                        <p class="mt-2 text-sm text-slate-500">公開3ヶ月で月間2.8万PVを達成</p>
-                        <a href="#" class="mt-4 inline-block text-sm font-semibold text-indigo-600 hover:underline">記事を読む »</a>
+                        <p class="mt-3 font-bold text-ink leading-snug">本業を持ちながら副業ライティングに20件近く挑戦してみた【前編】</p>
+                        <p class="mt-2 text-sm text-taupe">クラウドワークス・ランサーズで20件近くの案件に応募。期限内に完了できたのは1件だけだった記録。</p>
+                        <span class="mt-4 inline-block text-sm font-semibold text-navy">記事を読む »</span>
                     </div>
-                </div>
+                </a>
+                </article>
 
-                <div data-category="beauty" class="rounded-2xl border border-slate-200 overflow-hidden bg-white">
-                    <img src="https://picsum.photos/seed/writer-beauty2/600/400" alt="" loading="lazy"
-                        class="w-full h-44 object-cover">
+                <article>
+                <a href="https://note.com/emiriru_w/n/nf6bce58be4c8" target="_blank" rel="noreferrer"
+                    data-category="challenge"
+                    class="rounded-xl border border-sand overflow-hidden bg-paper block hover:shadow-md transition-shadow">
+                    <picture>
+                        <source srcset="images/works-challenge2.webp" type="image/webp">
+                        <img src="images/works-challenge2.jpg" alt="本業を持ちながら副業ライティングに20件近く挑戦してみた【後編】"
+                            loading="lazy" class="w-full h-44 object-cover">
+                    </picture>
                     <div class="p-5">
                         <div class="flex flex-wrap gap-2">
-                            <span class="rounded-full bg-indigo-50 text-indigo-600 text-xs font-medium px-3 py-1">構成・執筆</span>
-                            <span class="rounded-full bg-indigo-50 text-indigo-600 text-xs font-medium px-3 py-1">WordPress入稿</span>
+                            <span
+                                class="rounded-md bg-navy-light text-navy text-xs font-medium px-3 py-1">副業ライティング挑戦記</span>
                         </div>
-                        <p class="mt-3 font-bold text-slate-900 leading-snug">クレンジングオイルの選び方|成分から徹底比較</p>
-                        <p class="mt-2 text-sm text-slate-500">オウンドメディア内クリック率1位を記録</p>
-                        <a href="#" class="mt-4 inline-block text-sm font-semibold text-indigo-600 hover:underline">記事を読む »</a>
+                        <p class="mt-3 font-bold text-ink leading-snug">本業を持ちながら副業ライティングに20件近く挑戦してみた【後編】</p>
+                        <p class="mt-2 text-sm text-taupe">20件近く応募して見えたのは、受注できたかどうかより「本業のありがたみ」と「自分の限界」だったという気づき。
+                        </p>
+                        <span class="mt-4 inline-block text-sm font-semibold text-navy">記事を読む »</span>
                     </div>
-                </div>
+                </a>
+                </article>
 
-                <div data-category="lifestyle" class="rounded-2xl border border-slate-200 overflow-hidden bg-white">
-                    <img src="https://picsum.photos/seed/writer-lifestyle1/600/400" alt="" loading="lazy"
-                        class="w-full h-44 object-cover">
+                <article>
+                <a href="https://note.com/emiriru_w/n/n12a7856c708c" target="_blank" rel="noreferrer"
+                    data-category="essay"
+                    class="rounded-xl border border-sand overflow-hidden bg-paper block hover:shadow-md transition-shadow">
+                    <picture>
+                        <source srcset="images/works-essay1.webp" type="image/webp">
+                        <img src="images/works-essay1.jpg" alt="育児で時間を奪われ、オーディオブックで「学ぶ理由」を見つけた話"
+                            loading="lazy" class="w-full h-44 object-cover">
+                    </picture>
                     <div class="p-5">
                         <div class="flex flex-wrap gap-2">
-                            <span class="rounded-full bg-indigo-50 text-indigo-600 text-xs font-medium px-3 py-1">構成・執筆</span>
+                            <span class="rounded-md bg-navy-light text-navy text-xs font-medium px-3 py-1">エッセイ</span>
                         </div>
-                        <p class="mt-3 font-bold text-slate-900 leading-snug">一人暮らしの固定費見直し術</p>
-                        <p class="mt-2 text-sm text-slate-500">SNSでのシェア数が増加し、指名リピート案件化</p>
-                        <a href="#" class="mt-4 inline-block text-sm font-semibold text-indigo-600 hover:underline">記事を読む »</a>
+                        <p class="mt-3 font-bold text-ink leading-snug">育児で時間を奪われ、オーディオブックで「学ぶ理由」を見つけた話</p>
+                        <p class="mt-2 text-sm text-taupe">育児で「奪われた」はずの時間が、オーディオブックをきっかけに学び方を見直すきっかけになった話。</p>
+                        <span class="mt-4 inline-block text-sm font-semibold text-navy">記事を読む »</span>
                     </div>
-                </div>
+                </a>
+                </article>
 
-                <div data-category="beauty" class="rounded-2xl border border-slate-200 overflow-hidden bg-white">
-                    <img src="https://picsum.photos/seed/writer-beauty3/600/400" alt="" loading="lazy"
-                        class="w-full h-44 object-cover">
+                <article>
+                <a href="https://note.com/emiriru_w/n/ncb128dbd014c" target="_blank" rel="noreferrer"
+                    data-category="essay"
+                    class="rounded-xl border border-sand overflow-hidden bg-paper block hover:shadow-md transition-shadow">
+                    <picture>
+                        <source srcset="images/works-essay2.webp" type="image/webp">
+                        <img src="images/works-essay2.jpg" alt="今週、ちゃんと頑張りすぎていた" loading="lazy"
+                            class="w-full h-44 object-cover">
+                    </picture>
                     <div class="p-5">
                         <div class="flex flex-wrap gap-2">
-                            <span class="rounded-full bg-indigo-50 text-indigo-600 text-xs font-medium px-3 py-1">執筆・監修チェック対応</span>
+                            <span class="rounded-md bg-navy-light text-navy text-xs font-medium px-3 py-1">エッセイ</span>
                         </div>
-                        <p class="mt-3 font-bold text-slate-900 leading-snug">化粧品成分表示の読み方ガイド(薬機法チェック済み)</p>
-                        <p class="mt-2 text-sm text-slate-500">クライアント様の社内校正コスト削減に貢献</p>
-                        <a href="#" class="mt-4 inline-block text-sm font-semibold text-indigo-600 hover:underline">記事を読む »</a>
+                        <p class="mt-3 font-bold text-ink leading-snug">今週、ちゃんと頑張りすぎていた</p>
+                        <p class="mt-2 text-sm text-taupe">「今週、なんだかいつもより疲れているな」——仕事と育児を両立する日々の中で、頑張りすぎに気づいた記録。</p>
+                        <span class="mt-4 inline-block text-sm font-semibold text-navy">記事を読む »</span>
                     </div>
-                </div>
+                </a>
+                </article>
 
-                <div data-category="finance" class="rounded-2xl border border-slate-200 overflow-hidden bg-white">
-                    <img src="https://picsum.photos/seed/writer-finance2/600/400" alt="" loading="lazy"
-                        class="w-full h-44 object-cover">
+                <article>
+                <a href="#top" data-category="site"
+                    class="rounded-xl border border-sand overflow-hidden bg-paper block hover:shadow-md transition-shadow">
+                    <picture>
+                        <source srcset="images/works-site.webp" type="image/webp">
+                        <img src="images/works-site.jpg" alt="このポートフォリオサイト" loading="lazy"
+                            class="w-full h-44 object-cover">
+                    </picture>
                     <div class="p-5">
                         <div class="flex flex-wrap gap-2">
-                            <span class="rounded-full bg-indigo-50 text-indigo-600 text-xs font-medium px-3 py-1">構成・執筆</span>
+                            <span class="rounded-md bg-navy-light text-navy text-xs font-medium px-3 py-1">サイト制作</span>
                         </div>
-                        <p class="mt-3 font-bold text-slate-900 leading-snug">積立NISA vs iDeCo 制度比較記事</p>
-                        <p class="mt-2 text-sm text-slate-500">主要キーワードで検索順位3位以内を維持</p>
-                        <a href="#" class="mt-4 inline-block text-sm font-semibold text-indigo-600 hover:underline">記事を読む »</a>
+                        <p class="mt-3 font-bold text-ink leading-snug">このポートフォリオサイト</p>
+                        <p class="mt-2 text-sm text-taupe">NotebookLMでのリサーチ、Claude Codeでの実装、Codexによる独立レビュー、ローカルLLMでの下処理、Microsoft 365 Copilotでのイラスト制作など、役割ごとに複数のAIツールを使い分けて制作。レスポンシブ対応、WCAG準拠のアクセシビリティ、パフォーマンス最適化まで一貫して設計しています。</p>
+                        <span class="mt-4 inline-block text-sm font-semibold text-navy">ページ上部に戻る »</span>
                     </div>
-                </div>
+                </a>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- ============ Pricing & Schedule ============ -->
-    <section id="pricing" class="scroll-mt-20 py-20 sm:py-28 bg-slate-50">
+    <section id="pricing" class="scroll-mt-20 py-20 sm:py-28 bg-paper-deep">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto">
-                <h2 class="text-sm font-semibold text-indigo-600 tracking-widest">PRICING</h2>
-                <p class="mt-2 text-2xl sm:text-3xl font-bold text-slate-900">希望単価・稼働条件</p>
+                <h2 class="text-base font-semibold text-navy tracking-widest">PRICING</h2>
+                <p class="mt-2 text-2xl sm:text-3xl font-bold text-ink">希望単価・稼働条件</p>
             </div>
 
-            <!-- ▼ここを差し替え: 単価の目安 -->
-            <div class="mt-14 overflow-x-auto rounded-2xl border border-slate-200 bg-white">
+            <div class="mt-14 overflow-x-auto rounded-xl border border-sand bg-paper">
                 <table class="w-full text-left text-sm">
-                    <thead class="bg-slate-100 text-slate-900">
+                    <thead class="bg-paper-deep text-ink">
                         <tr>
                             <th class="px-6 py-4 font-bold">業務内容</th>
                             <th class="px-6 py-4 font-bold">単価目安</th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-slate-100">
+                    <tbody class="divide-y divide-sand">
                         <tr>
-                            <td class="px-6 py-4">SEO記事執筆(文字単価)</td>
-                            <td class="px-6 py-4">2円〜 / 文字</td>
+                            <td class="px-6 py-4">Web記事の執筆</td>
+                            <td class="px-6 py-4">1文字1円〜(ジャンル・納期により応相談)</td>
                         </tr>
-                        <tr class="bg-slate-50/60">
-                            <td class="px-6 py-4">記事執筆(記事単価・2,000〜3,000字)</td>
-                            <td class="px-6 py-4">15,000円〜 / 本</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4">構成案作成のみ</td>
-                            <td class="px-6 py-4">5,000円〜 / 本</td>
-                        </tr>
-                        <tr class="bg-slate-50/60">
-                            <td class="px-6 py-4">リライト・校正</td>
-                            <td class="px-6 py-4">1円〜 / 文字</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4">インタビュー取材込み記事</td>
-                            <td class="px-6 py-4">30,000円〜 / 本</td>
-                        </tr>
-                        <tr class="bg-slate-50/60">
-                            <td class="px-6 py-4">WordPress入稿代行</td>
-                            <td class="px-6 py-4">+3,000円〜 / 本</td>
+                        <tr class="bg-paper-deep/60">
+                            <td class="px-6 py-4">業務効率化ツールの開発・AI導入支援</td>
+                            <td class="px-6 py-4">20時間で5万円〜(規模により応相談)</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <p class="mt-3 text-xs text-slate-500">※金額は目安です。記事のボリューム・取材有無・専門性により別途お見積もりします。</p>
 
-            <!-- ▼ここを差し替え: 稼働条件 -->
-            <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="rounded-2xl border border-slate-200 bg-white p-6 text-center">
-                    <p class="text-xs font-semibold text-indigo-600 tracking-widest">稼働時間目安</p>
-                    <p class="mt-2 text-lg font-bold text-slate-900">週30時間</p>
+            <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="rounded-xl border border-sand bg-paper p-6 text-center">
+                    <p class="text-xs font-semibold text-navy tracking-widest">稼働時間目安</p>
+                    <p class="mt-2 text-lg font-bold text-ink">週10時間未満</p>
+                    <p class="mt-1 text-xs text-taupe">本業と家庭を最優先にしています</p>
                 </div>
-                <div class="rounded-2xl border border-slate-200 bg-white p-6 text-center">
-                    <p class="text-xs font-semibold text-indigo-600 tracking-widest">納期目安</p>
-                    <p class="mt-2 text-lg font-bold text-slate-900">構成〜執筆まで最短5営業日</p>
+                <div class="rounded-xl border border-sand bg-paper p-6 text-center">
+                    <p class="text-xs font-semibold text-navy tracking-widest">月間対応本数</p>
+                    <p class="mt-2 text-lg font-bold text-ink">応相談</p>
+                    <p class="mt-1 text-xs text-taupe">手持ちタスク次第のため個別にご相談ください</p>
                 </div>
-                <div class="rounded-2xl border border-slate-200 bg-white p-6 text-center">
-                    <p class="text-xs font-semibold text-indigo-600 tracking-widest">返信速度</p>
-                    <p class="mt-2 text-lg font-bold text-slate-900">原則24時間以内</p>
+                <div class="rounded-xl border border-sand bg-paper p-6 text-center">
+                    <p class="text-xs font-semibold text-navy tracking-widest">納期目安</p>
+                    <p class="mt-2 text-lg font-bold text-ink">応相談</p>
+                    <p class="mt-1 text-xs text-taupe">手持ちタスク次第のため個別にご相談ください</p>
                 </div>
-                <div class="rounded-2xl border border-slate-200 bg-white p-6 text-center">
-                    <p class="text-xs font-semibold text-indigo-600 tracking-widest">対応可能時間帯</p>
-                    <p class="mt-2 text-lg font-bold text-slate-900">平日10:00〜18:00</p>
+                <div class="rounded-xl border border-sand bg-paper p-6 text-center">
+                    <p class="text-xs font-semibold text-navy tracking-widest">返信について</p>
+                    <p class="mt-2 text-lg font-bold text-ink">本業時間中は翌営業日以降</p>
+                    <p class="mt-1 text-xs text-taupe">になる場合があります</p>
+                </div>
+                <div class="rounded-xl border border-sand bg-paper p-6 text-center">
+                    <p class="text-xs font-semibold text-navy tracking-widest">ご連絡方法</p>
+                    <p class="mt-2 text-lg font-bold text-ink">note・XのDM</p>
+                    <p class="mt-1 text-xs text-taupe">または下記フォームから</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ============ Contact ============ -->
-    <section id="contact" class="scroll-mt-20 py-20 sm:py-28 bg-white">
+    <section id="contact" class="scroll-mt-20 py-20 sm:py-28 bg-paper">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
-                <h2 class="text-sm font-semibold text-indigo-600 tracking-widest">CONTACT</h2>
-                <p class="mt-2 text-2xl sm:text-3xl font-bold text-slate-900">お問い合わせ</p>
-                <p class="mt-4 text-sm text-slate-600 leading-relaxed">
-                    記事執筆・取材のご依頼など、お気軽にご連絡ください。24時間以内を目安にご返信します。
+                <h2 class="text-base font-semibold text-navy tracking-widest">CONTACT</h2>
+                <p class="mt-2 text-2xl sm:text-3xl font-bold text-ink">お問い合わせ</p>
+                <p class="mt-4 text-sm text-clay leading-relaxed">
+                    記事執筆や業務効率化・AI導入のご相談など、お気軽にご連絡ください。副業時間の都合上、ご返信までお時間をいただく場合があります。
                 </p>
             </div>
 
-            <form id="contact-form" class="mt-12 space-y-6" action="#" method="POST">
-                <!--
-                    ▼このフォームはダミー動作です。実送信するには js/script.js 内のコメントを参照し、
-                    Formspree等のフォーム送信サービスと連携してください。
-                -->
+            <!-- Googleフォームと連携済み(2026-08-22)。entry IDの調べ方は README 参照。 -->
+            <form id="contact-form" class="mt-12 space-y-6"
+                action="https://docs.google.com/forms/d/e/1FAIpQLSeqvO_qpRJYrI5kEqAlXhQapIJFfrYmOEUCbGmyLM8jQn1IpA/formResponse"
+                method="POST"
+                target="hidden_iframe">
                 <div class="grid sm:grid-cols-2 gap-6">
                     <div>
-                        <label for="name" class="block text-sm font-semibold text-slate-700">お名前<span
+                        <label for="name" class="block text-sm font-semibold text-clay">お名前<span
                                 class="text-rose-500">*</span></label>
-                        <input id="name" name="name" type="text" required autocomplete="name"
-                            class="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 text-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 outline-none">
+                        <input id="name" name="entry.2120882436" type="text" required autocomplete="name"
+                            class="mt-2 w-full rounded-lg border border-sand px-4 py-3 text-sm focus:border-navy focus:ring-2 focus:ring-navy/20 outline-none">
                     </div>
                     <div>
-                        <label for="email" class="block text-sm font-semibold text-slate-700">メールアドレス<span
+                        <label for="email" class="block text-sm font-semibold text-clay">メールアドレス<span
                                 class="text-rose-500">*</span></label>
-                        <input id="email" name="email" type="email" required autocomplete="email"
-                            class="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 text-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 outline-none">
+                        <input id="email" name="entry.1975386818" type="email" required
+                            autocomplete="email"
+                            class="mt-2 w-full rounded-lg border border-sand px-4 py-3 text-sm focus:border-navy focus:ring-2 focus:ring-navy/20 outline-none">
                     </div>
                 </div>
 
                 <div>
-                    <label for="subject" class="block text-sm font-semibold text-slate-700">ご依頼内容</label>
-                    <select id="subject" name="subject"
-                        class="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 text-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 outline-none bg-white">
+                    <label for="subject" class="block text-sm font-semibold text-clay">ご依頼内容</label>
+                    <select id="subject" name="entry.1844144015"
+                        class="mt-2 w-full rounded-lg border border-sand px-4 py-3 text-sm focus:border-navy focus:ring-2 focus:ring-navy/20 outline-none bg-paper">
                         <option>記事執筆のご依頼</option>
-                        <option>取材のご依頼</option>
+                        <option>業務効率化・AI導入のご相談</option>
                         <option>その他のご相談</option>
                     </select>
                 </div>
 
                 <div>
-                    <label for="message" class="block text-sm font-semibold text-slate-700">メッセージ<span
+                    <label for="message" class="block text-sm font-semibold text-clay">メッセージ<span
                             class="text-rose-500">*</span></label>
-                    <textarea id="message" name="message" rows="5" required
-                        class="mt-2 w-full rounded-lg border border-slate-300 px-4 py-3 text-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 outline-none"></textarea>
+                    <textarea id="message" name="entry.1238426673" rows="5" required
+                        class="mt-2 w-full rounded-lg border border-sand px-4 py-3 text-sm focus:border-navy focus:ring-2 focus:ring-navy/20 outline-none"></textarea>
                 </div>
 
                 <button type="submit"
-                    class="w-full rounded-full bg-indigo-600 px-8 py-3.5 text-white font-semibold hover:bg-indigo-700 transition-colors">
+                    class="w-full rounded-lg bg-navy px-8 py-3.5 text-white font-semibold hover:bg-navy-deep transition-colors">
                     送信する
                 </button>
 
                 <p id="form-success" role="status"
                     class="hidden rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-700 text-sm px-4 py-3 text-center">
-                    送信されました(このフォームは現在ダミー動作です。実送信の設定は README をご確認ください)。
+                    送信されました。ご連絡ありがとうございます。
                 </p>
             </form>
+            <!-- Googleフォームへの送信をこのiframe内で完結させ、ページ遷移を防ぐ -->
+            <iframe name="hidden_iframe" id="hidden_iframe" class="hidden" title="送信用(非表示)"></iframe>
 
-            <!-- ▼ここを差し替え: SNSリンク -->
             <div class="mt-14 flex justify-center gap-4">
-                <a href="#" aria-label="X (Twitter)"
-                    class="w-11 h-11 rounded-full border border-slate-200 flex items-center justify-center text-slate-600 hover:border-indigo-300 hover:text-indigo-600 transition-colors">
-                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                        <line x1="4" y1="4" x2="20" y2="20" stroke-linecap="round" />
-                        <line x1="20" y1="4" x2="4" y2="20" stroke-linecap="round" />
+                <a href="https://x.com/emiriruW" target="_blank" rel="noreferrer" aria-label="X (Twitter)"
+                    class="w-11 h-11 rounded-full border border-sand flex items-center justify-center text-clay hover:border-navy hover:text-navy transition-colors">
+                    <svg class="w-5 h-5" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
                     </svg>
                 </a>
-                <a href="#" aria-label="note"
-                    class="w-11 h-11 rounded-full border border-slate-200 flex items-center justify-center font-bold text-slate-600 hover:border-indigo-300 hover:text-indigo-600 transition-colors">
+                <a href="https://note.com/emiriru_w" target="_blank" rel="noreferrer" aria-label="note"
+                    class="w-11 h-11 rounded-full border border-sand flex items-center justify-center font-bold text-clay hover:border-navy hover:text-navy transition-colors">
                     n
                 </a>
             </div>
         </div>
     </section>
 
+    </main>
+
     <!-- ============ Footer ============ -->
-    <footer class="bg-slate-900 text-slate-400">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
-            <!-- ▼ここを差し替え: フッター表記名 -->
-            <p>&copy; <span id="footer-year"></span> Minami Tanaka</p>
-            <p>Webライター Portfolio Template</p>
+    <footer class="bg-navy-deep text-paper/70">
+        <div
+            class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+            <p>&copy; <span id="footer-year"></span> Shohei</p>
+            <p>Words with intention. Code with care.</p>
         </div>
     </footer>
 

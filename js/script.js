@@ -58,8 +58,8 @@ function initWorksFilter() {
   const cards = document.querySelectorAll('[data-category]');
   if (!buttons.length || !cards.length) return;
 
-  const activeClasses = ['bg-indigo-600', 'text-white'];
-  const inactiveClasses = ['bg-white', 'text-slate-600', 'border', 'border-slate-200'];
+  const activeClasses = ['bg-navy', 'text-white'];
+  const inactiveClasses = ['bg-paper', 'text-clay', 'border', 'border-sand'];
 
   buttons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -83,39 +83,47 @@ function initWorksFilter() {
 function initContactForm() {
   const form = document.getElementById('contact-form');
   const successMessage = document.getElementById('form-success');
+  const hiddenIframe = document.getElementById('hidden_iframe');
   if (!form) return;
 
   // ------------------------------------------------------------------
-  // 【重要】このフォームは現在ダミー動作です(実際には何も送信されません)。
-  // GitHub Pagesは静的サイトのため、フォーム送信を受け取るには外部サービス
-  // (Formspree等)との連携が必要です。
+  // 【重要】Googleフォームと連携しています。実送信するには index.html 側で
+  // 以下2箇所を差し替えてください(README にも手順を記載しています)。
+  // 1. <form> タグの action 属性を、Googleフォームの formResponse URL に変更する
+  //    (例: https://docs.google.com/forms/d/e/xxxxxxxxxxxxx/formResponse)
+  // 2. 各入力欄の name 属性 (entry.REPLACE_WITH_◯◯_ID) を、
+  //    Googleフォーム側の実際の entry ID に変更する
   //
-  // Formspreeで実送信を有効にする手順:
-  // 1. https://formspree.io/ でアカウントを作成し、フォームを1つ作成する
-  // 2. 発行されたEndpoint URL (例: https://formspree.io/f/xxxxxxx) を控える
-  // 3. index.html の <form id="contact-form" ...> タグの action 属性に
-  //    そのURLを設定する (method="POST" はそのままでよい)
-  // 4. 下の event.preventDefault() 以降のダミー処理(送信成功メッセージの
-  //    表示部分を除く)を削除し、フォームを通常送信に戻す
-  //    ※ fetch(form.action, { method: 'POST', body: new FormData(form),
-  //       headers: { Accept: 'application/json' } }) に置き換えれば、
-  //       ページ遷移せずに送信することもできる
+  // 送信は非表示のiframe(hidden_iframe)をtargetにしたネイティブなフォーム送信
+  // で行うため、ページ遷移は発生しません。Googleフォーム側はCORS越しに応答を
+  // 返さない仕様のため、JS側では「iframeの読み込み完了」をもって送信完了と
+  // みなしています(実際に受理されたかどうかまでは検知できません)。
   // ------------------------------------------------------------------
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
+  let submitted = false;
 
+  form.addEventListener('submit', (event) => {
     if (!form.checkValidity()) {
+      event.preventDefault();
       form.reportValidity();
       return;
     }
-
-    // ダミー送信処理(実際には何も送信していません)
-    form.reset();
-    if (successMessage) {
-      successMessage.classList.remove('hidden');
-      setTimeout(() => successMessage.classList.add('hidden'), 5000);
-    }
+    // ここでpreventDefaultはしない。隠しiframeへネイティブ送信させる。
+    submitted = true;
   });
+
+  if (hiddenIframe) {
+    // ページ読み込み直後の初回load(iframeの空の初期状態)は無視し、
+    // フォーム送信によるload(2回目以降)だけを完了とみなす。
+    hiddenIframe.addEventListener('load', () => {
+      if (!submitted) return;
+      submitted = false;
+      form.reset();
+      if (successMessage) {
+        successMessage.classList.remove('hidden');
+        setTimeout(() => successMessage.classList.add('hidden'), 5000);
+      }
+    });
+  }
 }
 
 function initFooterYear() {
