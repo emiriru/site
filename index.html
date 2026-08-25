@@ -8,6 +8,13 @@
     <meta name="description"
         content="Webアプリ開発エンジニアとして働きながら、副業でWebライターに挑戦するShoheiのポートフォリオサイトです。副業ライティング挑戦の記録や執筆実績を掲載しています。">
 
+    <!-- Favicon一式(ブックマーク・タブ表示用)。SVGを優先し、非対応環境向けにICO/PNGへフォールバック -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
     <!-- OGP(SNSシェア時のリンクカード表示)。og:url/og:imageはGitHub Pagesの標準URL規則(https://<ユーザー名>.github.io/<リポジトリ名>/)に基づく想定値。▼独自ドメインを設定した場合はここを差し替え -->
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ja_JP">
@@ -528,7 +535,20 @@
                     </div>
                     <div class="rounded-xl border border-sand bg-paper p-6 text-center">
                         <p class="text-xs font-semibold text-navy tracking-widest">ご連絡方法</p>
-                        <p class="mt-2 text-lg font-bold text-ink">note・XのDM</p>
+                        <p class="mt-2 flex items-center justify-center gap-1.5 text-lg font-bold text-ink">
+                            <span class="sr-only">note</span>
+                            <svg class="h-4 w-4 shrink-0" aria-hidden="true" viewBox="0 0 493 493" fill="#000000">
+                                <path
+                                    d="m139.57,142.06c41.19,0,97.6-2.09,138.1-1.04,54.34,1.39,74.76,25.06,75.45,83.53.69,33.06,0,127.73,0,127.73h-58.79c0-82.83.35-96.5,0-122.6-.69-22.97-7.25-33.92-24.9-36.01-18.69-2.09-71.07-.35-71.07-.35v158.96h-58.79v-210.22Z" />
+                            </svg>
+                            <span aria-hidden="true">・</span>
+                            <span class="sr-only">X</span>
+                            <svg class="h-4 w-4 shrink-0" aria-hidden="true" viewBox="0 0 24 24" fill="#000000">
+                                <path
+                                    d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+                            </svg>
+                            <span aria-hidden="true">のDM</span>
+                        </p>
                         <p class="mt-1 text-xs text-taupe">または下記フォームから</p>
                     </div>
                 </div>
@@ -604,8 +624,11 @@
                         </svg>
                     </a>
                     <a href="https://note.com/emiriruw" target="_blank" rel="noreferrer" aria-label="note"
-                        class="w-11 h-11 rounded-full border border-sand flex items-center justify-center font-bold text-clay hover:border-navy hover:text-navy transition-colors">
-                        n
+                        class="w-11 h-11 rounded-full border border-sand flex items-center justify-center hover:border-navy transition-colors">
+                        <svg class="w-5 h-5" aria-hidden="true" viewBox="0 0 493 493" fill="#000000">
+                            <path
+                                d="m139.57,142.06c41.19,0,97.6-2.09,138.1-1.04,54.34,1.39,74.76,25.06,75.45,83.53.69,33.06,0,127.73,0,127.73h-58.79c0-82.83.35-96.5,0-122.6-.69-22.97-7.25-33.92-24.9-36.01-18.69-2.09-71.07-.35-71.07-.35v158.96h-58.79v-210.22Z" />
+                        </svg>
                     </a>
                 </div>
             </div>
