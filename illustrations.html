@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="ja" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成イラストギャラリー | Shohei</title>
+    <meta name="description"
+        content="Shoheiがnote記事のヘッダー等に使用した、AI生成イラストのギャラリーです。記事ごとにイラストと簡単な説明を掲載しています。">
+
+    <!-- Favicon一式(ブックマーク・タブ表示用)。SVGを優先し、非対応環境向けにICO/PNGへフォールバック -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- OGP(SNSシェア時のリンクカード表示)。og:url/og:imageはGitHub Pagesの標準URL規則(https://<ユーザー名>.github.io/<リポジトリ名>/)に基づく想定値。▼独自ドメインを設定した場合はここを差し替え -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="Shohei | コトバを実装するAIエンジニア">
+    <meta property="og:title" content="生成イラストギャラリー | Shohei">
+    <meta property="og:description"
+        content="Shoheiがnote記事のヘッダー等に使用した、AI生成イラストのギャラリーです。記事ごとにイラストと簡単な説明を掲載しています。">
+    <meta property="og:url" content="https://emiriru.github.io/site/illustrations.html">
+    <meta property="og:image" content="https://emiriru.github.io/site/images/hero.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="生成イラストギャラリー | Shohei">
+    <meta name="twitter:description"
+        content="Shoheiがnote記事のヘッダー等に使用した、AI生成イラストのギャラリーです。記事ごとにイラストと簡単な説明を掲載しています。">
+    <meta name="twitter:image" content="https://emiriru.github.io/site/images/hero.jpg">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K9GBDGT838"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag()
+        {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-K9GBDGT838');
+    </script>
+
+    <!-- Tailwind CSS (Play CDN / ビルド不要) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                    },
+                    colors: {
+                        paper: '#FFFFFF',
+                        'paper-deep': '#F9FAFB',
+                        ink: '#3B3428',
+                        clay: '#5C5346',
+                        taupe: '#6E6350',
+                        sand: '#E4D9C4',
+                        navy: '#2C3E63',
+                        'navy-deep': '#232A3D',
+                        'navy-light': '#E8ECF4',
+                    },
+                },
+            },
+        };
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-paper text-clay font-sans antialiased">
+
+    <!-- ============ Header ============ -->
+    <header id="site-header" class="sticky top-0 z-50 bg-paper/90 backdrop-blur border-b border-sand transition-shadow">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="index.html#top" class="text-lg font-bold tracking-tight text-ink">
+                    Shohei<span class="text-navy">.</span>コトバを実装するAIエンジニア
+                </a>
+
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-clay">
+                    <a href="index.html#about" class="hover:text-navy transition-colors">About</a>
+                    <a href="index.html#services" class="hover:text-navy transition-colors">Services</a>
+                    <a href="index.html#works" class="hover:text-navy transition-colors">Works</a>
+                    <a href="illustrations.html" class="text-navy font-semibold">Illustrations</a>
+                    <a href="index.html#pricing" class="hover:text-navy transition-colors">Pricing</a>
+                    <a href="index.html#contact"
+                        class="ml-2 inline-flex items-center rounded-lg bg-navy px-5 py-2 text-white font-semibold hover:bg-navy-deep transition-colors">
+                        お問い合わせ
+                    </a>
+                </nav>
+
+                <button id="menu-btn" type="button" aria-label="メニューを開く" aria-expanded="false"
+                    class="md:hidden p-2 text-clay">
+                    <svg id="icon-open" class="w-6 h-6" aria-hidden="true" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <line x1="4" y1="6" x2="20" y2="6" stroke-linecap="round" />
+                        <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round" />
+                        <line x1="4" y1="18" x2="20" y2="18" stroke-linecap="round" />
+                    </svg>
+                    <svg id="icon-close" class="hidden w-6 h-6" aria-hidden="true" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <line x1="6" y1="6" x2="18" y2="18" stroke-linecap="round" />
+                        <line x1="18" y1="6" x2="6" y2="18" stroke-linecap="round" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden border-t border-sand bg-paper">
+            <div class="px-4 py-4 flex flex-col gap-4 text-sm font-medium text-clay">
+                <a href="index.html#about" class="hover:text-navy transition-colors">About</a>
+                <a href="index.html#services" class="hover:text-navy transition-colors">Services</a>
+                <a href="index.html#works" class="hover:text-navy transition-colors">Works</a>
+                <a href="illustrations.html" class="text-navy font-semibold">Illustrations</a>
+                <a href="index.html#pricing" class="hover:text-navy transition-colors">Pricing</a>
+                <a href="index.html#contact"
+                    class="inline-flex justify-center rounded-lg bg-navy px-5 py-2.5 text-white font-semibold hover:bg-navy-deep transition-colors">
+                    お問い合わせ
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ============ Intro ============ -->
+        <section class="py-16 sm:py-20 bg-paper-deep">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-base font-semibold text-navy tracking-widest">ILLUSTRATIONS</h1>
+                <p class="mt-2 text-2xl sm:text-3xl font-bold text-ink">生成イラストギャラリー</p>
+                <p class="mt-6 text-sm sm:text-base text-clay leading-relaxed">
+                    note記事のヘッダーやこのサイトのメインビジュアルに使ってきた、AI生成イラストをまとめています。すべて実際に公開・使用したものです。<br
+                        class="hidden sm:block">
+                    構図・雰囲気を記事の内容に合わせて指示を出し、Microsoft 365 CopilotやChatGPTなど複数のツールを使い分けながら、試行錯誤して仕上げています。
+                </p>
+            </div>
+        </section>
+
+        <!-- ============ Gallery ============ -->
+        <section class="py-16 sm:py-20 bg-paper">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <figure class="rounded-xl border border-sand overflow-hidden bg-paper">
+                        <picture>
+                            <source srcset="images/hero.webp" type="image/webp">
+                            <img src="images/hero.jpg" alt="星空の下、ノートに一緒に書き込む少年とロボット" loading="lazy"
+                                class="w-full aspect-[16/9] object-cover">
+                        </picture>
+                        <figcaption class="p-5">
+                            <p class="font-bold text-ink leading-snug">サイトのメインビジュアル</p>
+                            <p class="mt-2 text-sm text-taupe">このポートフォリオサイトのヒーロー画像・プロフィールアイコンに使用。「コードも書くし、文章も書く」という自己紹介を、少年とロボットの組み合わせで表現。</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="rounded-xl border border-sand overflow-hidden bg-paper">
+                        <picture>
+                            <source srcset="images/gallery-challenge1.webp" type="image/webp">
+                            <img src="images/gallery-challenge1.jpg" alt="デスクの上、青い紙飛行機と無数の紙飛行機" loading="lazy"
+                                class="w-full aspect-[16/9] object-cover">
+                        </picture>
+                        <figcaption class="p-5">
+                            <p class="font-bold text-ink leading-snug">本業を持ちながら副業ライティングに20件近く挑戦してみた【前編】</p>
+                            <p class="mt-2 text-sm text-taupe">応募した案件の数だけ散らばる紙飛行機の中、1機だけ飛び立とうとしている様子で「挑戦の数」を表現。</p>
+                            <a href="https://note.com/emiriruw/n/nc3886e7cb7bd" target="_blank" rel="noreferrer"
+                                class="mt-3 inline-block text-sm font-semibold text-navy">記事を読む »</a>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="rounded-xl border border-sand overflow-hidden bg-paper">
+                        <picture>
+                            <source srcset="images/gallery-challenge2.webp" type="image/webp">
+                            <img src="images/gallery-challenge2.jpg" alt="デスクでノートパソコンに向かう男性のイラスト" loading="lazy"
+                                class="w-full aspect-[16/9] object-cover">
+                        </picture>
+                        <figcaption class="p-5">
+                            <p class="font-bold text-ink leading-snug">本業を持ちながら副業ライティングに20件近く挑戦してみた【後編】</p>
+                            <p class="mt-2 text-sm text-taupe">前編と対になる構図で、地に足をつけて淡々と作業に向かう姿を描いた。</p>
+                            <a href="https://note.com/emiriruw/n/nf6bce58be4c8" target="_blank" rel="noreferrer"
+                                class="mt-3 inline-block text-sm font-semibold text-navy">記事を読む »</a>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="rounded-xl border border-sand overflow-hidden bg-paper">
+                        <picture>
+                            <source srcset="images/gallery-essay1.webp" type="image/webp">
+                            <img src="images/gallery-essay1.jpg" alt="イヤホンをつけてマグカップを持つ女性のイラスト" loading="lazy"
+                                class="w-full aspect-[16/9] object-cover">
+                        </picture>
+                        <figcaption class="p-5">
+                            <p class="font-bold text-ink leading-snug">育児で時間を奪われ、オーディオブックで「学ぶ理由」を見つけた話</p>
+                            <p class="mt-2 text-sm text-taupe">家事の合間にイヤホンで耳から学ぶ、というエッセイの主題をそのまま情景として描いた。</p>
+                            <a href="https://note.com/emiriruw/n/n12a7856c708c" target="_blank" rel="noreferrer"
+                                class="mt-3 inline-block text-sm font-semibold text-navy">記事を読む »</a>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="rounded-xl border border-sand overflow-hidden bg-paper">
+                        <picture>
+                            <source srcset="images/gallery-essay2.webp" type="image/webp">
+                            <img src="images/gallery-essay2.jpg" alt="夜、部屋でピザとドリンクがテーブルに並ぶイラスト" loading="lazy"
+                                class="w-full aspect-[16/9] object-cover">
+                        </picture>
+                        <figcaption class="p-5">
+                            <p class="font-bold text-ink leading-snug">今週、ちゃんと頑張りすぎていた</p>
+                            <p class="mt-2 text-sm text-taupe">頑張った週の終わりに、自分をねぎらう夜の時間を、あたたかい部屋の情景で表現。</p>
+                            <a href="https://note.com/emiriruw/n/ncb128dbd014c" target="_blank" rel="noreferrer"
+                                class="mt-3 inline-block text-sm font-semibold text-navy">記事を読む »</a>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="rounded-xl border border-sand overflow-hidden bg-paper">
+                        <picture>
+                            <source srcset="images/gallery-intro.webp" type="image/webp">
+                            <img src="images/gallery-intro.jpg" alt="星空の下、ノートパソコンと万年筆が置かれたデスクから空を見上げる少年とロボット" loading="lazy"
+                                class="w-full aspect-[16/9] object-cover">
+                        </picture>
+                        <figcaption class="p-5">
+                            <p class="font-bold text-ink leading-snug">自己紹介とポートフォリオ</p>
+                            <p class="mt-2 text-sm text-taupe">サイトのメインビジュアルと同じ「少年とロボット」の世界観を、記事用に構図違いで制作。</p>
+                            <a href="https://note.com/emiriruw/n/n69dfe825d8a9" target="_blank" rel="noreferrer"
+                                class="mt-3 inline-block text-sm font-semibold text-navy">記事を読む »</a>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="rounded-xl border border-sand overflow-hidden bg-paper">
+                        <picture>
+                            <source srcset="images/gallery-nocode1.webp" type="image/webp">
+                            <img src="images/gallery-nocode1.jpg" alt="ランプに照らされたブロックの家の模型と、周りに置かれた小さな家々のイラスト" loading="lazy"
+                                class="w-full aspect-[16/9] object-cover">
+                        </picture>
+                        <figcaption class="p-5">
+                            <p class="font-bold text-ink leading-snug">ノーコードを使わずAIとポートフォリオサイトを作った話【前編】</p>
+                            <p class="mt-2 text-sm text-taupe">既製の小さな家々(ノーコードツール)の中で、1つだけ手作りで家を組み上げていく様子を制作過程になぞらえた。</p>
+                            <a href="https://note.com/emiriruw/n/n9522c460d136" target="_blank" rel="noreferrer"
+                                class="mt-3 inline-block text-sm font-semibold text-navy">記事を読む »</a>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="rounded-xl border border-sand overflow-hidden bg-paper">
+                        <picture>
+                            <source srcset="images/gallery-ai7.webp" type="image/webp">
+                            <img src="images/gallery-ai7.jpg" alt="設計図・定規・絵の具など、道具を並べて作業台で家を組み立てているイラスト" loading="lazy"
+                                class="w-full aspect-[16/9] object-cover">
+                        </picture>
+                        <figcaption class="p-5">
+                            <div class="flex items-center gap-2">
+                                <p class="font-bold text-ink leading-snug">ポートフォリオサイトをAI7つの役割分担で作った手順とプロンプト</p>
+                                <span
+                                    class="shrink-0 rounded-md bg-sand text-clay text-xs font-medium px-2 py-0.5">有料記事</span>
+                            </div>
+                            <p class="mt-2 text-sm text-taupe">設計図・道具箱を並べた作業台の構図で、複数のAIを役割分担しながら1つのサイトを組み上げていく制作過程を表現。</p>
+                            <a href="https://note.com/emiriruw/n/n502821e2c578" target="_blank" rel="noreferrer"
+                                class="mt-3 inline-block text-sm font-semibold text-navy">記事を読む »</a>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="rounded-xl border border-sand overflow-hidden bg-paper">
+                        <picture>
+                            <source srcset="images/gallery-nocode2.webp" type="image/webp">
+                            <img src="images/gallery-nocode2.jpg" alt="星空の窓辺に完成したブロックの家が明かりを灯しているイラスト" loading="lazy"
+                                class="w-full aspect-[16/9] object-cover">
+                        </picture>
+                        <figcaption class="p-5">
+                            <p class="font-bold text-ink leading-snug">ノーコードを使わずAIとポートフォリオサイトを作った話【後編】</p>
+                            <p class="mt-2 text-sm text-taupe">前編で組み立てていた家に明かりが灯り完成した情景で、サイトの完成を表現。</p>
+                            <a href="https://note.com/emiriruw/n/nde56c7306c00" target="_blank" rel="noreferrer"
+                                class="mt-3 inline-block text-sm font-semibold text-navy">記事を読む »</a>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="rounded-xl border border-sand overflow-hidden bg-paper">
+                        <picture>
+                            <source srcset="images/gallery-income0.webp" type="image/webp">
+                            <img src="images/gallery-income0.jpg" alt="ベッドにうつ伏せで顔を伏せる男性と、床に置かれたノートのイラスト" loading="lazy"
+                                class="w-full aspect-[16/9] object-cover">
+                        </picture>
+                        <figcaption class="p-5">
+                            <p class="font-bold text-ink leading-snug">副業の収入がまだ0円。休日に3時間寝てしまった僕の罪悪感</p>
+                            <p class="mt-2 text-sm text-taupe">床に置いたままのノートと、ベッドに沈み込む姿で、休んだことへの罪悪感を情景として表現。</p>
+                            <a href="https://note.com/emiriruw/n/nfd722b5ae38f" target="_blank" rel="noreferrer"
+                                class="mt-3 inline-block text-sm font-semibold text-navy">記事を読む »</a>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="rounded-xl border border-sand overflow-hidden bg-paper">
+                        <picture>
+                            <source srcset="images/gallery-otomari.webp" type="image/webp">
+                            <img src="images/gallery-otomari.jpg" alt="校庭で手を振る親子と、走り去る黄色いバスのイラスト" loading="lazy"
+                                class="w-full aspect-[16/9] object-cover">
+                        </picture>
+                        <figcaption class="p-5">
+                            <p class="font-bold text-ink leading-snug">初めてのお泊まり保育、親のほうが不安だった話</p>
+                            <p class="mt-2 text-sm text-taupe">子どもを乗せたバスを見送る後ろ姿で、「不安だったのは親の方」という記事の視点を表現。</p>
+                            <a href="https://note.com/emiriruw/n/nfd164811f3ed" target="_blank" rel="noreferrer"
+                                class="mt-3 inline-block text-sm font-semibold text-navy">記事を読む »</a>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="rounded-xl border border-sand overflow-hidden bg-paper">
+                        <picture>
+                            <source srcset="images/gallery-reisho.webp" type="image/webp">
+                            <img src="images/gallery-reisho.jpg" alt="満員電車の窓から夜景を見つめるスーツ姿の男性のイラスト" loading="lazy"
+                                class="w-full aspect-[16/9] object-cover">
+                        </picture>
+                        <figcaption class="p-5">
+                            <p class="font-bold text-ink leading-snug">リーマンショック世代の新卒がIT企業で疲れ果て、美容師を選ぶまで</p>
+                            <p class="mt-2 text-sm text-taupe">新卒時代を振り返る自分史シリーズ第一弾。満員電車の中で外の夜景を見つめる姿で、当時の閉塞感を表現。</p>
+                            <a href="https://note.com/emiriruw/n/n85c55e4a2d5f" target="_blank" rel="noreferrer"
+                                class="mt-3 inline-block text-sm font-semibold text-navy">記事を読む »</a>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="rounded-xl border border-sand overflow-hidden bg-paper">
+                        <picture>
+                            <source srcset="images/gallery-2weeks0.webp" type="image/webp">
+                            <img src="images/gallery-2weeks0.jpg" alt="夕日を見ながらデスクで植木鉢と種の袋を前にする男性の後ろ姿のイラスト" loading="lazy"
+                                class="w-full aspect-[16/9] object-cover">
+                        </picture>
+                        <figcaption class="p-5">
+                            <p class="font-bold text-ink leading-snug">副業の収益が0円のまま2週間。今はタネを撒く時期だと割り切った</p>
+                            <p class="mt-2 text-sm text-taupe">植木鉢とタネの袋を配置し、「収益はまだないが、タネを撒いている時期」という記事の結論をそのまま構図にした。</p>
+                            <a href="https://note.com/emiriruw/n/ncf25b9f5bfaa" target="_blank" rel="noreferrer"
+                                class="mt-3 inline-block text-sm font-semibold text-navy">記事を読む »</a>
+                        </figcaption>
+                    </figure>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ Back to top CTA ============ -->
+        <section class="py-16 sm:py-20 bg-paper-deep">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <p class="text-clay leading-relaxed">
+                    記事本文や、Webライターとしての実績は、Worksページでまとめて紹介しています。
+                </p>
+                <a href="index.html#works"
+                    class="mt-6 inline-flex items-center justify-center rounded-lg bg-navy px-8 py-3 text-white font-semibold shadow-sm hover:bg-navy-deep transition-colors">
+                    Worksを見る
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============ Footer ============ -->
+    <footer class="bg-navy-deep text-paper/70">
+        <div
+            class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+            <p>&copy; <span id="footer-year"></span> Shohei</p>
+            <p>Words with intention. Code with care.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

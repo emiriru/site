@@ -7,9 +7,10 @@ GitHub Pagesでそのまま公開できる、Shoheiのシングルページ・�
 
 ```
 site/
-├── index.html      本体(全セクション)
-├── js/script.js    モバイルメニュー・実績フィルタ・お問い合わせフォームの挙動
-└── README.md       このファイル
+├── index.html          本体(全セクション)
+├── illustrations.html  生成イラストギャラリー(note記事ヘッダー等の実際に使用したイラストと説明)
+├── js/script.js        モバイルメニュー・実績フィルタ・お問い合わせフォームの挙動
+└── README.md           このファイル
 ```
 
 ## ローカルで確認する
