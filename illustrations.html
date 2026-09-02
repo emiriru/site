@@ -94,20 +94,14 @@
     <header id="site-header" class="sticky top-0 z-50 bg-paper/90 backdrop-blur border-b border-sand transition-shadow">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <a href="index.html#top" class="text-lg font-bold tracking-tight text-ink">
+                <a href="index.html" class="text-lg font-bold tracking-tight text-ink">
                     Shohei<span class="text-navy">.</span>コトバを実装するAIエンジニア
                 </a>
 
                 <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-clay">
                     <a href="index.html#about" class="hover:text-navy transition-colors">About</a>
-                    <a href="index.html#services" class="hover:text-navy transition-colors">Services</a>
-                    <a href="index.html#works" class="hover:text-navy transition-colors">Works</a>
+                    <a href="index.html#targets" class="hover:text-navy transition-colors">ご相談内容から選ぶ</a>
                     <a href="illustrations.html" class="text-navy font-semibold">Illustrations</a>
-                    <a href="index.html#pricing" class="hover:text-navy transition-colors">Pricing</a>
-                    <a href="index.html#contact"
-                        class="ml-2 inline-flex items-center rounded-lg bg-navy px-5 py-2 text-white font-semibold hover:bg-navy-deep transition-colors">
-                        お問い合わせ
-                    </a>
                 </nav>
 
                 <button id="menu-btn" type="button" aria-label="メニューを開く" aria-expanded="false"
@@ -130,14 +124,8 @@
         <div id="mobile-menu" class="hidden md:hidden border-t border-sand bg-paper">
             <div class="px-4 py-4 flex flex-col gap-4 text-sm font-medium text-clay">
                 <a href="index.html#about" class="hover:text-navy transition-colors">About</a>
-                <a href="index.html#services" class="hover:text-navy transition-colors">Services</a>
-                <a href="index.html#works" class="hover:text-navy transition-colors">Works</a>
+                <a href="index.html#targets" class="hover:text-navy transition-colors">ご相談内容から選ぶ</a>
                 <a href="illustrations.html" class="text-navy font-semibold">Illustrations</a>
-                <a href="index.html#pricing" class="hover:text-navy transition-colors">Pricing</a>
-                <a href="index.html#contact"
-                    class="inline-flex justify-center rounded-lg bg-navy px-5 py-2.5 text-white font-semibold hover:bg-navy-deep transition-colors">
-                    お問い合わせ
-                </a>
             </div>
         </div>
     </header>
@@ -353,12 +341,18 @@
         <section class="py-16 sm:py-20 bg-paper-deep">
             <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <p class="text-clay leading-relaxed">
-                    記事本文や、Webライターとしての実績は、Worksページでまとめて紹介しています。
+                    記事本文や、Webライターとしての実績はWebライター向けページで、AI画像生成によるビジュアル制作のご依頼はWebデザイナー向けページでまとめて紹介しています。
                 </p>
-                <a href="index.html#works"
-                    class="mt-6 inline-flex items-center justify-center rounded-lg bg-navy px-8 py-3 text-white font-semibold shadow-sm hover:bg-navy-deep transition-colors">
-                    Worksを見る
-                </a>
+                <div class="mt-6 flex flex-wrap justify-center gap-4">
+                    <a href="writer.html#works"
+                        class="inline-flex items-center justify-center rounded-lg bg-navy px-8 py-3 text-white font-semibold shadow-sm hover:bg-navy-deep transition-colors">
+                        執筆Worksを見る
+                    </a>
+                    <a href="design.html"
+                        class="inline-flex items-center justify-center rounded-lg border border-sand px-8 py-3 text-clay font-semibold hover:bg-paper transition-colors">
+                        Webデザイナー向けページへ
+                    </a>
+                </div>
             </div>
         </section>
     </main>

@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="ja" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shohei | オンライン事務代行</title>
+    <meta name="description"
+        content="フルリモートのWebアプリ開発エンジニアShoheiが、資料作成・データ整理・請求書作成などのオンライン事務代行をご依頼いただけます。">
+
+    <!-- Favicon一式(ブックマーク・タブ表示用)。SVGを優先し、非対応環境向けにICO/PNGへフォールバック -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- OGP(SNSシェア時のリンクカード表示)。og:url/og:imageはGitHub Pagesの標準URL規則(https://<ユーザー名>.github.io/<リポジトリ名>/)に基づく想定値。▼独自ドメインを設定した場合はここを差し替え -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="Shohei | コトバを実装するAIエンジニア">
+    <meta property="og:title" content="Shohei | オンライン事務代行">
+    <meta property="og:description"
+        content="フルリモートのWebアプリ開発エンジニアShoheiが、資料作成・データ整理・請求書作成などのオンライン事務代行をご依頼いただけます。">
+    <meta property="og:url" content="https://emiriru.github.io/site/assistant.html">
+    <meta property="og:image" content="https://emiriru.github.io/site/images/hero.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shohei | オンライン事務代行">
+    <meta name="twitter:description"
+        content="フルリモートのWebアプリ開発エンジニアShoheiが、資料作成・データ整理・請求書作成などのオンライン事務代行をご依頼いただけます。">
+    <meta name="twitter:image" content="https://emiriru.github.io/site/images/hero.jpg">
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K9GBDGT838"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag()
+        {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-K9GBDGT838');
+    </script>
+
+    <!-- Tailwind CSS (Play CDN / ビルド不要) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                    },
+                    colors: {
+                        paper: '#FFFFFF',
+                        'paper-deep': '#F9FAFB',
+                        ink: '#3B3428',
+                        clay: '#5C5346',
+                        taupe: '#6E6350',
+                        sand: '#E4D9C4',
+                        navy: '#2C3E63',
+                        'navy-deep': '#232A3D',
+                        'navy-light': '#E8ECF4',
+                    },
+                },
+            },
+        };
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-paper text-clay font-sans antialiased">
+
+    <!-- ============ Header ============ -->
+    <header id="site-header" class="sticky top-0 z-50 bg-paper/90 backdrop-blur border-b border-sand transition-shadow">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-3">
+                    <a href="index.html" class="text-lg font-bold tracking-tight text-ink">
+                        Shohei<span class="text-navy">.</span>オンライン事務代行
+                    </a>
+
+                    <div class="relative group hidden md:block">
+                        <button type="button"
+                            class="flex items-center gap-1 rounded-md border border-sand px-2.5 py-1 text-xs font-semibold text-clay hover:border-navy hover:text-navy transition-colors">
+                            ご相談内容を選ぶ
+                            <svg class="w-3 h-3 transition-transform group-hover:rotate-180" aria-hidden="true"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div
+                            class="invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 transition-opacity absolute left-0 top-full pt-2 z-50">
+                            <div class="w-64 rounded-lg border border-sand bg-paper shadow-lg p-2">
+                                <a href="writer.html"
+                                    class="block rounded-md px-3 py-2 text-sm text-clay hover:bg-paper-deep transition-colors">Webライター向け</a>
+                                <a href="design.html"
+                                    class="block rounded-md px-3 py-2 text-sm text-clay hover:bg-paper-deep transition-colors">Webデザイナー向け</a>
+                                <a href="ai-support.html"
+                                    class="block rounded-md px-3 py-2 text-sm text-clay hover:bg-paper-deep transition-colors">AI導入支援・ツール開発向け</a>
+                                <a href="assistant.html" aria-current="page"
+                                    class="block rounded-md px-3 py-2 text-sm font-semibold bg-navy text-white">オンライン事務代行向け</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-clay">
+                    <a href="#about" class="hover:text-navy transition-colors">About</a>
+                    <a href="#services" class="hover:text-navy transition-colors">Services</a>
+                    <a href="#pricing" class="hover:text-navy transition-colors">Pricing</a>
+                    <a href="#contact"
+                        class="ml-2 inline-flex items-center rounded-lg bg-navy px-5 py-2 text-white font-semibold hover:bg-navy-deep transition-colors">
+                        お問い合わせ
+                    </a>
+                </nav>
+
+                <button id="menu-btn" type="button" aria-label="メニューを開く" aria-expanded="false"
+                    class="md:hidden p-2 text-clay">
+                    <svg id="icon-open" class="w-6 h-6" aria-hidden="true" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <line x1="4" y1="6" x2="20" y2="6" stroke-linecap="round" />
+                        <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round" />
+                        <line x1="4" y1="18" x2="20" y2="18" stroke-linecap="round" />
+                    </svg>
+                    <svg id="icon-close" class="hidden w-6 h-6" aria-hidden="true" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <line x1="6" y1="6" x2="18" y2="18" stroke-linecap="round" />
+                        <line x1="18" y1="6" x2="6" y2="18" stroke-linecap="round" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden border-t border-sand bg-paper">
+            <div class="px-4 py-4 flex flex-col gap-4 text-sm font-medium text-clay">
+                <div class="pb-3 mb-1 border-b border-sand">
+                    <p class="text-xs font-semibold text-taupe tracking-widest">ご相談内容から選ぶ</p>
+                    <div class="mt-3 flex flex-col gap-2">
+                        <a href="writer.html"
+                            class="rounded-md px-3 py-2 border border-sand hover:border-navy hover:text-navy transition-colors">Webライター向け</a>
+                        <a href="design.html"
+                            class="rounded-md px-3 py-2 border border-sand hover:border-navy hover:text-navy transition-colors">Webデザイナー向け</a>
+                        <a href="ai-support.html"
+                            class="rounded-md px-3 py-2 border border-sand hover:border-navy hover:text-navy transition-colors">AI導入支援・ツール開発向け</a>
+                        <a href="assistant.html" aria-current="page"
+                            class="rounded-md px-3 py-2 font-semibold bg-navy text-white">オンライン事務代行向け</a>
+                    </div>
+                </div>
+
+                <a href="#about" class="hover:text-navy transition-colors">About</a>
+                <a href="#services" class="hover:text-navy transition-colors">Services</a>
+                <a href="#pricing" class="hover:text-navy transition-colors">Pricing</a>
+                <a href="#contact"
+                    class="inline-flex justify-center rounded-lg bg-navy px-5 py-2.5 text-white font-semibold hover:bg-navy-deep transition-colors">
+                    お問い合わせ
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ============ Hero (MV) ============ -->
+        <section id="top" class="scroll-mt-20 bg-paper">
+            <div class="grid md:grid-cols-2 md:min-h-[560px]">
+                <!-- テキストパネル -->
+                <div class="order-2 md:order-1 flex items-center bg-gradient-to-b from-navy-light/70 to-paper">
+                    <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-0 md:pr-8 lg:pr-12">
+                        <div class="md:ml-auto md:max-w-md lg:max-w-lg">
+                            <p class="text-base font-semibold text-navy tracking-widest">ONLINE ASSISTANT / PORTFOLIO</p>
+                            <h1 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-black text-ink leading-tight">
+                                時間のかかる作業を、<br class="hidden sm:block">
+                                巻き取ります。
+                            </h1>
+                            <p class="mt-6 text-base sm:text-lg text-clay leading-relaxed">
+                                資料作成・データ整理・請求書作成など、時間のかかる事務作業をオンラインで巻き取ります。本業でも情報管理を徹底する環境にいるため、秘密保持には特に注意して対応します。
+                            </p>
+                            <div class="mt-8 flex flex-wrap gap-4">
+                                <a href="#services"
+                                    class="inline-flex items-center justify-center rounded-lg bg-navy px-8 py-3 text-white font-semibold shadow-sm hover:bg-navy-deep transition-colors">
+                                    対応可能業務を見る
+                                </a>
+                                <a href="#contact"
+                                    class="inline-flex items-center justify-center rounded-lg border border-sand px-8 py-3 text-clay font-semibold hover:bg-paper-deep transition-colors">
+                                    お問い合わせ
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- イラストパネル(フルブリード) -->
+                <div class="order-1 md:order-2 relative aspect-[4/3] md:aspect-auto overflow-hidden">
+                    <picture>
+                        <source srcset="images/hero.webp" type="image/webp">
+                        <img src="images/hero.jpg" alt="星空の下、ノートに一緒に書き込む少年とロボット"
+                            class="absolute inset-0 w-full h-full object-cover">
+                    </picture>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ About ============ -->
+        <section id="about" class="scroll-mt-20 py-20 sm:py-28 bg-paper">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto">
+                    <h2 class="text-base font-semibold text-navy tracking-widest">ABOUT</h2>
+                    <p class="mt-2 text-2xl sm:text-3xl font-bold text-ink">自己紹介</p>
+                </div>
+
+                <div class="mt-14 grid md:grid-cols-3 gap-10 items-start">
+                    <div class="md:col-span-1 flex flex-col items-center text-center">
+                        <div
+                            class="w-40 h-40 rounded-full bg-paper-deep border border-sand flex items-center justify-center overflow-hidden">
+                            <picture>
+                                <source srcset="images/profile.webp" type="image/webp">
+                                <img src="images/profile.jpg" alt="Shohei" class="w-full h-full object-cover">
+                            </picture>
+                        </div>
+                        <p class="mt-4 text-lg font-bold text-ink">Shohei</p>
+                        <p class="text-sm text-taupe">Webアプリ開発エンジニア / Webライター・福岡県在住</p>
+
+                        <div class="mt-4 flex flex-wrap justify-center gap-2">
+                            <span
+                                class="inline-flex items-center rounded-md border border-sand bg-paper-deep px-3 py-1 text-xs font-medium text-clay">AWSクラウドプラクティショナー</span>
+                            <span
+                                class="inline-flex items-center rounded-md border border-sand bg-paper-deep px-3 py-1 text-xs font-medium text-clay">基本情報技術者試験</span>
+                            <span
+                                class="inline-flex items-center rounded-md border border-sand bg-paper-deep px-3 py-1 text-xs font-medium text-clay">Javaブロンズ</span>
+                            <span
+                                class="inline-flex items-center rounded-md border border-sand bg-paper-deep px-3 py-1 text-xs font-medium text-clay">ネイル検定3級</span>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-2 text-clay leading-loose space-y-4">
+                        <p>
+                            はじめまして、Shoheiです。普段はAWSを基盤とした環境で、Javaを中心としたWebアプリケーション開発を手がけるエンジニアとして、フルリモートで働いています。未就学児2人の育児と両立しながら、副業にも取り組んでいます。
+                        </p>
+                        <p>
+                            本業でも情報管理を徹底する環境で働いているため、お預かりする資料やデータの取り扱いには特に注意を払います。ツールを使ったスピードと、丁寧な確認の両方を大切にしています。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ Services & Tools ============ -->
+        <section id="services" class="scroll-mt-20 py-20 sm:py-28 bg-paper-deep">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto">
+                    <h2 class="text-base font-semibold text-navy tracking-widest">SERVICES</h2>
+                    <p class="mt-2 text-2xl sm:text-3xl font-bold text-ink">対応可能業務</p>
+                </div>
+
+                <div class="mt-14 grid sm:grid-cols-1 max-w-2xl mx-auto gap-6">
+                    <div class="rounded-xl border border-sand bg-paper p-6">
+                        <div class="w-9 h-9 rounded-full bg-navy-light flex items-center justify-center text-navy">
+                            <svg class="w-5 h-5" aria-hidden="true" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <polyline points="5 13 10 18 19 7" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <p class="mt-4 font-bold text-ink">オンライン事務代行</p>
+                        <p class="mt-2 text-sm text-clay leading-relaxed">
+                            資料作成・データ整理・請求書作成など、時間のかかる事務作業を巻き取ります。本業時間外での対応のため、電話対応やメールの一次対応など即時対応が必要な業務は対象外です。本業でも情報管理を徹底する環境にいるため、秘密保持には特に注意して対応します。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-14">
+                    <p class="text-center font-bold text-ink">主な使用ツール</p>
+                    <div class="mt-6 flex flex-wrap justify-center gap-3">
+                        <span class="rounded-md border border-sand bg-paper px-4 py-2 text-sm text-clay">Claude</span>
+                        <span class="rounded-md border border-sand bg-paper px-4 py-2 text-sm text-clay">ChatGPT</span>
+                        <span class="rounded-md border border-sand bg-paper px-4 py-2 text-sm text-clay">Microsoft 365
+                            Copilot</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ Pricing & Schedule ============ -->
+        <section id="pricing" class="scroll-mt-20 py-20 sm:py-28 bg-paper-deep">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto">
+                    <h2 class="text-base font-semibold text-navy tracking-widest">PRICING</h2>
+                    <p class="mt-2 text-2xl sm:text-3xl font-bold text-ink">希望単価・稼働条件</p>
+                </div>
+
+                <div class="mt-14 overflow-x-auto rounded-xl border border-sand bg-paper">
+                    <table class="w-full text-left text-sm">
+                        <thead class="bg-paper-deep text-ink">
+                            <tr>
+                                <th class="px-6 py-4 font-bold">業務内容</th>
+                                <th class="px-6 py-4 font-bold">単価目安</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-sand">
+                            <tr>
+                                <td class="px-6 py-4">オンライン事務代行</td>
+                                <td class="px-6 py-4">時給1,000円〜(業務内容により応相談)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="rounded-xl border border-sand bg-paper p-6 text-center">
+                        <p class="text-xs font-semibold text-navy tracking-widest">稼働時間目安</p>
+                        <p class="mt-2 text-lg font-bold text-ink">週10時間未満</p>
+                        <p class="mt-1 text-xs text-taupe">本業と家庭を最優先にしています</p>
+                    </div>
+                    <div class="rounded-xl border border-sand bg-paper p-6 text-center">
+                        <p class="text-xs font-semibold text-navy tracking-widest">対応時間帯</p>
+                        <p class="mt-2 text-lg font-bold text-ink">本業時間外(平日夜・休日)</p>
+                        <p class="mt-1 text-xs text-taupe">即時対応が必要な業務は対象外です</p>
+                    </div>
+                    <div class="rounded-xl border border-sand bg-paper p-6 text-center">
+                        <p class="text-xs font-semibold text-navy tracking-widest">納期目安</p>
+                        <p class="mt-2 text-lg font-bold text-ink">応相談</p>
+                        <p class="mt-1 text-xs text-taupe">手持ちタスク次第のため個別にご相談ください</p>
+                    </div>
+                    <div class="rounded-xl border border-sand bg-paper p-6 text-center">
+                        <p class="text-xs font-semibold text-navy tracking-widest">返信について</p>
+                        <p class="mt-2 text-lg font-bold text-ink">本業時間中は翌営業日以降</p>
+                        <p class="mt-1 text-xs text-taupe">になる場合があります</p>
+                    </div>
+                    <div class="rounded-xl border border-sand bg-paper p-6 text-center">
+                        <p class="text-xs font-semibold text-navy tracking-widest">ご連絡方法</p>
+                        <p class="mt-2 flex items-center justify-center gap-1.5 text-lg font-bold text-ink">
+                            <span class="sr-only">note</span>
+                            <svg class="h-4 w-4 shrink-0" aria-hidden="true" viewBox="0 0 493 493" fill="#000000">
+                                <path
+                                    d="m139.57,142.06c41.19,0,97.6-2.09,138.1-1.04,54.34,1.39,74.76,25.06,75.45,83.53.69,33.06,0,127.73,0,127.73h-58.79c0-82.83.35-96.5,0-122.6-.69-22.97-7.25-33.92-24.9-36.01-18.69-2.09-71.07-.35-71.07-.35v158.96h-58.79v-210.22Z" />
+                            </svg>
+                            <span aria-hidden="true">・</span>
+                            <span class="sr-only">X</span>
+                            <svg class="h-4 w-4 shrink-0" aria-hidden="true" viewBox="0 0 24 24" fill="#000000">
+                                <path
+                                    d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+                            </svg>
+                            <span aria-hidden="true">のDM</span>
+                        </p>
+                        <p class="mt-1 text-xs text-taupe">または下記フォームから</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ Contact ============ -->
+        <section id="contact" class="scroll-mt-20 py-20 sm:py-28 bg-paper">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-base font-semibold text-navy tracking-widest">CONTACT</h2>
+                    <p class="mt-2 text-2xl sm:text-3xl font-bold text-ink">お問い合わせ</p>
+                    <p class="mt-4 text-sm text-clay leading-relaxed">
+                        オンライン事務代行のご相談など、お気軽にご連絡ください。副業時間の都合上、ご返信までお時間をいただく場合があります。
+                    </p>
+                </div>
+
+                <!-- Googleフォームと連携済み(2026-08-22)。entry IDの調べ方は README 参照。 -->
+                <form id="contact-form" class="mt-12 space-y-6"
+                    action="https://docs.google.com/forms/d/e/1FAIpQLSeqvO_qpRJYrI5kEqAlXhQapIJFfrYmOEUCbGmyLM8jQn1IpA/formResponse"
+                    method="POST" target="hidden_iframe">
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-semibold text-clay">お名前<span
+                                    class="text-rose-500">*</span></label>
+                            <input id="name" name="entry.2120882436" type="text" required autocomplete="name"
+                                class="mt-2 w-full rounded-lg border border-sand px-4 py-3 text-sm focus:border-navy focus:ring-2 focus:ring-navy/20 outline-none">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-clay">メールアドレス<span
+                                    class="text-rose-500">*</span></label>
+                            <input id="email" name="entry.1975386818" type="email" required autocomplete="email"
+                                class="mt-2 w-full rounded-lg border border-sand px-4 py-3 text-sm focus:border-navy focus:ring-2 focus:ring-navy/20 outline-none">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="subject" class="block text-sm font-semibold text-clay">ご依頼内容</label>
+                        <select id="subject" name="entry.1844144015"
+                            class="mt-2 w-full rounded-lg border border-sand px-4 py-3 text-sm focus:border-navy focus:ring-2 focus:ring-navy/20 outline-none bg-paper">
+                            <option>記事執筆のご依頼</option>
+                            <option>業務効率化・AI導入のご相談</option>
+                            <option selected>その他のご相談</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-sm font-semibold text-clay">メッセージ<span
+                                class="text-rose-500">*</span></label>
+                        <textarea id="message" name="entry.1238426673" rows="5" required
+                            class="mt-2 w-full rounded-lg border border-sand px-4 py-3 text-sm focus:border-navy focus:ring-2 focus:ring-navy/20 outline-none"></textarea>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full rounded-lg bg-navy px-8 py-3.5 text-white font-semibold hover:bg-navy-deep transition-colors">
+                        送信する
+                    </button>
+
+                    <p id="form-success" role="status"
+                        class="hidden rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-700 text-sm px-4 py-3 text-center">
+                        送信されました。ご連絡ありがとうございます。
+                    </p>
+                </form>
+                <!-- Googleフォームへの送信をこのiframe内で完結させ、ページ遷移を防ぐ -->
+                <iframe name="hidden_iframe" id="hidden_iframe" class="hidden" title="送信用(非表示)"></iframe>
+
+                <div class="mt-14 flex justify-center gap-4">
+                    <a href="https://x.com/emiriruW" target="_blank" rel="noreferrer" aria-label="X (Twitter)"
+                        class="w-11 h-11 rounded-full border border-sand flex items-center justify-center text-clay hover:border-navy hover:text-navy transition-colors">
+                        <svg class="w-5 h-5" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+                        </svg>
+                    </a>
+                    <a href="https://note.com/emiriruw" target="_blank" rel="noreferrer" aria-label="note"
+                        class="w-11 h-11 rounded-full border border-sand flex items-center justify-center hover:border-navy transition-colors">
+                        <svg class="w-5 h-5" aria-hidden="true" viewBox="0 0 493 493" fill="#000000">
+                            <path
+                                d="m139.57,142.06c41.19,0,97.6-2.09,138.1-1.04,54.34,1.39,74.76,25.06,75.45,83.53.69,33.06,0,127.73,0,127.73h-58.79c0-82.83.35-96.5,0-122.6-.69-22.97-7.25-33.92-24.9-36.01-18.69-2.09-71.07-.35-71.07-.35v158.96h-58.79v-210.22Z" />
+                        </svg>
+                    </a>
+                </div>
+
+                <p class="mt-10 text-center text-sm text-taupe">
+                    <a href="index.html" class="text-navy font-semibold hover:underline">« トップ(依頼内容を選び直す)に戻る</a>
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============ Footer ============ -->
+    <footer class="bg-navy-deep text-paper/70">
+        <div
+            class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+            <p>&copy; <span id="footer-year"></span> Shohei</p>
+            <p>Words with intention. Code with care.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
